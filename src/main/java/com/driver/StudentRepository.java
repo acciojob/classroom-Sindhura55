@@ -9,10 +9,14 @@ import java.util.List;
 
 @Repository
 public class StudentRepository {
-    static HashMap<String,Student> studentMap=new HashMap<>();
-    static HashMap<String,Teacher> teacherMap=new HashMap<>();
-    static HashMap<String,List<String>> studentTeacherMap=new HashMap<>();
-
+    private static HashMap<String,Student> studentMap;
+    private static HashMap<String,Teacher>  teacherMap;
+    private static HashMap<String,List<String>> studentTeacherMap;
+public StudentRepository(){
+        this.studentMap=new HashMap<String,Student>();
+        this.teacherMap=new HashMap<String,Teacher>();
+        this.studentTeacherMap=new HashMap<String,List<String>>();
+    }
     public void addStudentData(Student student){
         studentMap.put(student.getName(),student);
     }
